@@ -108,8 +108,7 @@ windlabel.innerText="WindChill";
     conditioniconElement.forEach((element,index) =>{
    element.src=`${forecastArray[index].day.condition.icon}`;
    element.alt=`${forecastArray[index].day.condition.text}`;
-   element.style.width="70px";
-   element.style.height="70px";
+
 
 });
 const maxtempElement=document.querySelectorAll(".maxtemp");

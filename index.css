@@ -1,27 +1,26 @@
-/* border-box is used to include padding and border in the element's total width and height */
+/* two font face for different font weights */
 @font-face {
-  font-family: 'myCustomFont';
-  src: url('../font/Poppins-Medium.woff2') format('woff2-variations');
-  src: url('../font/Poppins-Medium.woff') format('woff-variations');
-  font-weight: 500; 
-
+  font-family: "myCustomFont";
+  src: url("../font/Poppins-Medium.woff2") format("woff2-variations");
+  src: url("../font/Poppins-Medium.woff") format("woff-variations");
+  font-weight: 500;
 }
-@font-face{
-  font-family: 'myCustomFont';
-  src: url('../font/Poppins-Regular.woff2') format('woff2-variations');
-  src: url('../font/Poppins-Regular.woff') format('woff-variations');
-  font-weight: 400; 
+@font-face {
+  font-family: "myCustomFont";
+  src: url("../font/Poppins-Regular.woff2") format("woff2-variations");
+  src: url("../font/Poppins-Regular.woff") format("woff-variations");
+  font-weight: 400;
 }
-
 
 * {
   box-sizing: border-box;
-  font-family: "myCustomFont", sans-serif; 
+  font-family: "myCustomFont", sans-serif;
   font-weight: 500; /* corrected from 500px to 500 */
   margin: 0;
   padding: 0;
-  --primary-color: #F3F4F6 ;
-  --secondary-color:  #F3E1A2;
+  --primary-color: #f3f4f6;
+  --secondary-color: #f3e1a2;
+  --map-color: black;
   /* --secondary-color:white; */
 }
 
@@ -32,211 +31,256 @@ html {
 body {
   height: 100%;
   display: grid;
-  margin:0 auto;  
+  margin: 0 auto;
   width: 100%;
-  /* background: black; */
-  background: linear-gradient(to bottom, rgb(43,50,150) 0%, rgb(20,136,204) 100%); 
-  /* background: linear-gradient(to bottom,rgb(20,136,204) 0%, rgb(43,50,150)  100%);  */ 
-  background-attachment: fixed; 
+  background: linear-gradient(
+    to bottom,
+    rgb(43, 50, 150) 0%,
+    rgb(20, 136, 204) 100%
+  );
+  background-attachment: fixed;
   background-repeat: no-repeat;
   position: relative;
   overflow-x: hidden;
-  /* background: linear-gradient(to bottom,rgb(20,136,200) 0%, rgb(43,50,150)  100%); */
 }
-header{
+
+header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
   margin-left: 30px;
-  margin-right:30px;
+  margin-right: 30px;
 }
-#location{
-  font-size: clamp(1rem, 2vw, 3rem);
-  color:var(--primary-color);
+
+#location {
+  font-size: clamp(1rem, 1.5vw, 3rem);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
-#locationtime{
+#locationtime {
   font-size: clamp(0.7rem, 1vw, 3rem);
-  color:var(--secondary-color);
-
+  color: var(--secondary-color);
 }
-#temp{
-  color:var(--primary-color);
+#temp {
+  color: var(--primary-color);
   font-size: clamp(1rem, 5vw, 6rem);
 }
- #dropdown{
+#dropdown {
   font-size: clamp(0.7rem, 1.5vw, 1.5rem);
   text-align: center;
- 
 }
-select:focus{
-  outline:none;
+select:focus {
+  outline: none;
   box-shadow: none;
 }
 
-#windgust,#feelslike,#dewpoint,#humidity,#heat,#windchill,.date ,.maxtemp,.mintemp,.feels,label{
-  color:var(--primary-color);
+#windgust,
+#feelslike,
+#dewpoint,
+#humidity,
+#heat,
+#windchill,
+.date,
+.maxtemp,
+.mintemp,
+.feels,
+label {
+  color: var(--primary-color);
   font-size: clamp(0.8rem, 2vw, 3rem);
 }
-#condition,#windG,#feelslikeLabel,#dewpointlabel,#humiditylabel,#heatlabel,#windlabel,.text,.maxlabel,.minlabel,.feelsL{
-  color:var(--secondary-color);
+#condition,
+#windG,
+#feelslikeLabel,
+#dewpointlabel,
+#humiditylabel,
+#heatlabel,
+#windlabel,
+.text,
+.maxlabel,
+.minlabel,
+.feelsL {
+  color: var(--secondary-color);
   font-size: clamp(0.5rem, 1vw, 1rem);
 }
 
-.currentweather{
+.currentweather {
   display: flex;
-  width:100vw;
+  width: 100vw;
   justify-content: space-between;
   margin-top: 25px;
-  gap:15px;
+  gap: 15px;
 }
 
-.icontemp{
+.icontemp {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:30vw;
+  width: 30vw;
   border-radius: 10px;
-  background-color: rgba(0,0,0,0.20);
+  background-color: rgba(0, 0, 0, 0.2);
   flex-wrap: nowrap;
-  margin-left:40px;
+  margin-left: 40px;
 }
-#icon{
-  width:10vw;
-  height:10vw;
+#icon {
+  width: 10vw;
+  height: 10vw;
 }
 
-.wind{
-  display:flex;
-  flex-direction: column;
-  justify-content: center;
-  gap:10px;
-  width: 60vw;
-  border-radius: 10px;
-  background-color: rgba(0,0,0,0.20);
-  flex-wrap: wrap; 
-  margin-right:40px;
-}
-.up{
-  display:flex;
-  justify-content:space-around;
-  align-content: flex-start;
-  width: 100%;
- flex-wrap: wrap;
-}
-.down{
+.wind {
   display: flex;
-  justify-content: space-around;
-  align-content: flex-start;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
-.forecastheading{
- 
-  font-size: clamp(0.8rem, 2vw, 3rem);
-  margin-top: 40px;
-  margin-left: 30px;
-  color:var(--primary-color);
-}
-.forecastweather{
-  display:flex;
+  gap: 20px;
+  width: 60vw;
   justify-content: space-evenly;
   border-radius: 10px;
-  background-color: rgba(0,0,0,0.20);
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-right: 40px;
+  align-items: center;
+}
+.gridcolumn {
+  display: grid;
+  gap: 20px;
+  padding: 12px;
+  text-align: left;
+}
+
+.forecastheading {
+  font-size: clamp(0.8rem, 1.5vw, 3rem);
+  margin-top: 40px;
+  margin-left: 30px;
+  color: var(--primary-color);
+}
+.forecastweather {
+  display: flex;
+  justify-content: space-evenly;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.2);
   margin-left: 40px;
-  margin-right: 40px; 
+  margin-right: 40px;
   margin-top: 15px;
-  flex-wrap: wrap;
 }
 
- .firstcolumn,.thirdcolumn,.fourthcolumn,.fifthcolumn{
- display: grid; 
-align-items:center;
-
- }
- #map { height:550px;
-width:80%;
-margin:0 auto;
-border:1px solid var(--primary-color);
-border-radius: 10px;
-margin-top: 20px;
-margin-bottom: 20px;
-position: relative;
- }
-.popupColor{
-  color:black;
+.forcolumn,
+.secondcolumn {
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+  align-items: center;
+  text-align: left;
+  gap: 20px;
 }
- footer
- {
+.conditionicon {
+  width: 6vw;
+  height: 6vw;
+}
+
+#map {
+  height: 550px;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.popupColor {
+  color: var(--map-color);
+}
+
+footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding:5px 10px;
+  padding: 5px 10px;
   margin-bottom: 15px;
 }
 
-#btn{
+#btn {
   display: block;
-  border:1px solid var(--primary-color);
+  border: 1px solid var(--primary-color);
   border-radius: 5px;
-  padding:5px 10px;
+  padding: 5px 10px;
   font-size: 1vw;
   cursor: pointer;
-  position:fixed;
-
+  position: fixed;
 }
 
-.floating{
+.floating {
   position: fixed;
   bottom: 12%;
   transform: translateY(50%);
-  z-index: 1000;
+  z-index: 2000;
   margin: auto;
-} 
+}
 
-@media(max-width: 600px){
-  #temp{
+@media (max-width: 600px) {
+  #temp {
     font-family: "myCustomFont", sans-serif;
     font-weight: 400;
   }
-  #locationtime,#condition,#windG,#feelslikeLabel,#dewpointlabel,#humiditylabel,#heatlabel,#windlabel,.text,.maxlabel,.minlabel,.feelsL,#dropdown{
+  #locationtime,
+  #condition,
+  #windG,
+  #feelslikeLabel,
+  #dewpointlabel,
+  #humiditylabel,
+  #heatlabel,
+  #windlabel,
+  .text,
+  .maxlabel,
+  .minlabel,
+  .feelsL,
+  #dropdown {
     font-family: "myCustomFont", sans-serif;
     font-weight: 400;
   }
-  #location,#windgust,#feelslike,#dewpoint,#humidity,#heat,#windchill,.date ,.maxtemp,.mintemp,.feels,label{
+  #location,
+  #windgust,
+  #feelslike,
+  #dewpoint,
+  #humidity,
+  #heat,
+  #windchill,
+  .date,
+  .maxtemp,
+  .mintemp,
+  .feels,
+  label {
     font-family: "myCustomFont", sans-serif;
-    font-weight:400;
-}
-.forecastheading{
-  font-family: "myCustomFont", sans-serif;
-  font-weight:400;
-  margin-left: 40px;
-}
+    font-weight: 400;
+  }
+  .forecastheading {
+    font-family: "myCustomFont", sans-serif;
+    font-weight: 400;
+    margin-left: 40px;
+  }
 
-.icontemp,.wind{
-  background-color: transparent;
-}
-.wind{
-  padding-top:5px;
-  padding-bottom: 5px;
-}
-#dropdown{
-  width:25vw;
-}
-#map{
-  display:none;
-  height:0;
-  width:0;
-}
-#btn{
-  display:none;
-}
-body{
-  width:100vw;
-  height:100vh;
-}
+  .icontemp,
+  .wind,
+  .forecastweather {
+    background-color: transparent;
+  }
+  .wind {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
 
+  #dropdown {
+    width: 25vw;
+  }
+  #map {
+    display: none;
+    height: 0;
+    width: 0;
+  }
+  #btn {
+    display: none;
+  }
+  body {
+    width: 100vw;
+    height: 100vh;
+  }
 }

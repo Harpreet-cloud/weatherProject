@@ -28,7 +28,7 @@ It was challenging to decide from where to start. So, I decided to follow a mock
 
 # Project Wins
 
-- Responsiveness issue helped to understand how to use @font-face and clamp to make font responsive
+- Responsiveness issues helped to understand how to use @font-face,clamp and media queries to develop responsive applications
 - Using 3 API helped to understand how Promise.all and asyn/await are working .Promise.all helped to fetch 3 APIs in parallel order and which was faster than aync/await's sequential behviour
 - The project has two JS files one for map and other for weather data.This project helped to understand various concepts such as how to create functions and where you should call those ,DOM maniputaion,events listeners,global and private variables:map.js was accessing global variables from index.js file
 - Windows scroll function
