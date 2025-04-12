@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather WebPage</title>
+    <link rel="stylesheet" href="index.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+     <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
+    </head>
+    <body>
+        <header>
+          <div class="locTime">
+              <div>
+                <div id="location"></div>
+                </div>
+                <div>
+                    <div id="locationtime"></div>
+                </div>
+          </div>
+          <div>
+                  <select id="dropdown" name="options" aria-label="Select a location">
+                    <option value="0" >Aldergrove</option>
+                    <option value="1" >Ontario</option>
+                    <option value="2" >Edmonton</option>
+                  </select>
+                  </div>
+                
+        </header>
+        <div class="main">
+<div class="currentweather">
+    <div class="icontemp">
+        <div><img id="icon"></img></div>
+        <div>
+        <div id="temp"></div>
+        <div id="condition"></div>
+        </div>
+        </div>
+    <div class="wind">
+        <div class="up">
+            <div>
+                <div id="feelslike"></div>
+                <div id="feelslikeLabel"></div>
+            </div>
+        <div>
+            <div id="windgust"></div>
+            <div id="windG"></div>
+        </div>
+        <div>
+            <div id="dewpoint"></div>
+            <div id="dewpointlabel"></div>
+        </div>
+        </div>
+        <div class="down">
+          <div>
+            <div id="humidity"></div>
+            <div id="humiditylabel"></div>
+        </div>
+        <div>
+          <div id="heat"></div>
+          <div id="heatlabel"></div>
+      </div>
+      
+        <div>
+            <div id="windchill"></div>
+            <div id="windlabel"></div>
+        </div>
+        </div>
+    </div> 
+    </div>
+   <div class="forecastheading"><p>Weather Forecast</p></div>
+  <div class="forecastweather">
+    <div class="firstcolumn" data-id="forecastparent">
+    <div>
+      <div class="date"></div>
+      <div class="text"></div>
+     
+        </div>
+        <div>
+            <div class="date"></div>
+            <div class="text"></div>
+              </div>
+              <div>
+                <div class="date"></div>
+                <div class="text"></div>
+                  </div>
+                          </div>
+                          <div class="secondcolumn">
+                            <div>
+                            <img class="conditionicon">
+                          </img></div>
+                          <div>
+                            <img class="conditionicon">
+                        </img></div>
+                        <div>
+                            <img class="conditionicon">
+                    </img></div>
+                  
+                          </div>
+                          <div class="thirdcolumn">
+                            <div>
+                            <div class="maxtemp"></div>
+                            <div class="maxlabel"></div>
+                          </div>
+                          <div>
+                            <div class="maxtemp"></div>
+                            <div class="maxlabel"></div>
+                          </div>
+                          <div>
+                            <div class="maxtemp"></div>
+                            <div class="maxlabel"></div>
+                          </div>
+</div>
+<div class="fourthcolumn">
+    <div>
+        <div class="mintemp"></div>
+        <div class="minlabel"></div>
+      </div>
+      <div>
+        <div class="mintemp"></div>
+        <div class="minlabel"></div>
+      </div>
+      <div>
+        <div class="mintemp"></div>
+        <div class="minlabel"></div>
+      </div>
+</div>
+<div class="fifthcolumn">
+  <div>
+    <div class="feels"></div>
+    <div class="feelsL"></div>
+  </div>
+  <div>
+    <div class="feels"></div>
+    <div class="feelsL"></div>
+  </div>
+  <div>
+    <div class="feels"></div>
+    <div class="feelsL"></div>
+  </div>
+ 
+</div>
+</div>
+  <div id="map"></div>
+
+        </div>
+        <footer>
+                  <button id="btn">⬆ Back to Top</button>
+      </footer>
+<script src="./JS/index.js"></script>
+<script src="./JS/map.js"></script>
+
+    </body>
+
+</html>
