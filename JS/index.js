@@ -13,9 +13,9 @@
 
 //calling 3 api and converting response into json
 async function getDataFromAllAPI() {
-    allLocations=['https://gist.githubusercontent.com/Harpreet-cloud/78130dd85ae8c2abb29c7399297eb35b/raw/e67bf57d91371aec84a8434c28267bb456f6b8bc/gistfile1.json',
-        'https://gist.githubusercontent.com/Harpreet-cloud/46621f6b54221d85e431be8f6adebcc8/raw/cfc31fad4a064ab49c9be6a17cc90bdf4151a21c/gistfile1.json',
-        'https://gist.githubusercontent.com/Harpreet-cloud/79091dd06ffbd69ca187e3e16927edf8/raw/ad32b8a8c4ab1edf2a4f6233df2b006b9f575f33/gistfile1.json'
+    allLocations=['https://gist.githubusercontent.com/harpreetdhindsa/78130dd85ae8c2abb29c7399297eb35b/raw/e67bf57d91371aec84a8434c28267bb456f6b8bc/gistfile1.json',
+        'https://gist.githubusercontent.com/harpreetdhindsa/46621f6b54221d85e431be8f6adebcc8/raw/cfc31fad4a064ab49c9be6a17cc90bdf4151a21c/gistfile1.json',
+        'https://gist.githubusercontent.com/harpreetdhindsa/79091dd06ffbd69ca187e3e16927edf8/raw/ad32b8a8c4ab1edf2a4f6233df2b006b9f575f33/gistfile1.json'
         ];
         try{
  //here map is giving you an array of promises to fetch 3 urls and Promise.all is executing that promise in parallel which is faster than sequential order of await
@@ -92,6 +92,7 @@ windlabel.innerText="WindChill";
 //forecast weather 
  function renderForecast(){
     const dateElement=document.querySelectorAll(".date");
+    console.log(dateElement);
     //here forEach is used because you are iterating over every single element in the array without stopping 
     dateElement.forEach((element, index) => {
         element.innerText=forecastArray[index].date;
